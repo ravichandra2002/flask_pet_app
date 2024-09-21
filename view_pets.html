@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Pet List</h1>
+        <a href="/add_pet" class="btn">Add New Pet</a>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet ID</th>
+                    <th>Name</th>
+                    <th>Species</th>
+                    <th>Age</th>
+                    <th>Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pet in pets %}
+                <tr>
+                    <td>{{ pet.id }}</td>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.species }}</td>
+                    <td>{{ pet.age }}</td>
+                    <td>{{ pet.owner }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No pets found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pet Tracker</p>
+    </footer>
+</body>
+</html>
